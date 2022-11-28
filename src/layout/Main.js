@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <div >
             <Header className=" "></Header>
-            <Container className=' dark:bg-black dark:text-white dark:max-w-full  min-w-full'>
+            <Container className=' dark:bg-black dark:text-white dark:max-w-full  min-w-full bg-gray-300'>
             <Row>
                 <Col lg="9" >
                 <Outlet className=''></Outlet>
