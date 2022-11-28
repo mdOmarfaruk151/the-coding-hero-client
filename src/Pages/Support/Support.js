@@ -1,10 +1,13 @@
 import React from 'react';
 
+
 const Support = () => {
     return (
         <div>
-            <h4>Support</h4>
-        </div>
+           <h3>support</h3>
+
+</div>
+       
     );
 };
 
