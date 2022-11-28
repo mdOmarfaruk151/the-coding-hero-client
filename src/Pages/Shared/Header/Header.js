@@ -5,12 +5,15 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUser } from "react-icons/fa";
 import { HiOutlineBell } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import logo from "../../../images/logo.png";
 import CategorySideBar from "../CategorySideBar/CategorySideBar";
+import { NavNavLink } from "react-router-dom";
 
 const Header = () => {
+
+  //! for dark mood
   const [theme, setTheme] = useState(null);
 
   useEffect(()=>{
@@ -33,6 +36,16 @@ const Header = () => {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+//!...................................................
+  //! Active Navbar
+  const navNavLinkStyles =({ isActive }) =>{
+    return{
+     fontWeight: isActive ? 'bold' : 'normal',
+     border: isActive ? '2px solid orange': 'none',
+     
+    }
+ }
+ //!...............................................
 
   return (
     <div>
@@ -45,7 +58,7 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand >
-            <Link className="text-decoration-none  p-0 text-white " to="/">
+            <NavLink  className="text-decoration-none  p-0 text-white " to="/">
               <div className="d-flex  mr-5">
                 <div>
                   <img
@@ -56,55 +69,62 @@ const Header = () => {
                 </div>
                 <div className="mt-2 text-2xl">The Coding Hero</div>
               </div>
-            </Link>
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="text-black bg-white"/>
           <Navbar.Collapse id="responsive-navbar-nav" >
             <Nav>
               <div className="me-auto mb-3 mt-3  ">
-                <Link
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="/"
+                  style={navNavLinkStyles}
                 >
                   Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="/category/08"
+                  style={navNavLinkStyles}
                 >
                   Courses
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="my-classes"
+                  style={navNavLinkStyles}
                 >
                   My Classes
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="/support"
+                  style={navNavLinkStyles}
                 >
                   Support
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="/blog"
+                  style={navNavLinkStyles}
                 >
                   Blog
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
-                  to="/faq "
+                  to="/faq"
+                  style={navNavLinkStyles}
                 >
                   FAQ
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   className="text-decoration-none hover:border border-blue-700 rounded p-2  me-3 text-white text-xl"
                   to="/about"
+                  style={navNavLinkStyles}
                 >
                   About
-                </Link>
+                </NavLink>
               </div>
             </Nav>
             <button >
@@ -181,15 +201,15 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link className="me-2" to="/login">
+                    <NavLink className="me-2" to="/login">
                       Login
-                    </Link>
-                    <Link to="/register">Register</Link>
+                    </NavLink>
+                    <NavLink to="/register">Register</NavLink>
                   </>
                 )}
               </>
 
-              <Link to="/profile">
+              <NavLink to="/profile">
                 {user?.photoURL ? (
                   <Image
                     style={{ height: "40px" }}
@@ -199,7 +219,7 @@ const Header = () => {
                 ) : (
                   <FaUser></FaUser>
                 )}
-              </Link>
+              </NavLink>
             </Nav> */}
             <div className="d-lg-none text-white">
               <CategorySideBar></CategorySideBar>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const CategorySideBar = () => {
 
@@ -13,6 +13,17 @@ const CategorySideBar = () => {
          .then(data => setCategories(data));
      },[])
  
+   //!...................................................
+  //! Active Navbar
+  const navNavLinkStyles =({ isActive }) =>{
+    return{
+     fontWeight: isActive ? 'bold' : 'normal',
+     border: isActive ? '2px solid orange': 'none',
+     
+    }
+ }
+ //!...............................................
+
     return (
         <div>
             <hr className="mt-3 dark:bg-white"/>
@@ -21,9 +32,11 @@ const CategorySideBar = () => {
             <div className='p-2'>
                 {
                     categories.map(category => <p key={category.id}>
-                       <Link className="text-decoration-none text-white btn btn-outline-dark btn-secondary "
-                        to={`/category/${category.id}`}>
-                            {category.name}</Link>
+                       <NavLink className="text-decoration-none text-white btn btn-outline-dark btn-secondary "
+                        to={`/category/${category.id}`}
+                        style={navNavLinkStyles}
+                        >
+                            {category.name}</NavLink>
                     </p>)
                 }
             </div>
