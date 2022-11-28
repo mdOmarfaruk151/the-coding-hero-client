@@ -7,15 +7,15 @@ import RightSideNav from '../Pages/Shared/RightSideNav/RightSideNav';
 
 const Main = () => {
     return (
-        <div>
-            <Header></Header>
-            <Container>
+        <div >
+            <Header className=" "></Header>
+            <Container className=' dark:bg-black dark:text-white dark:max-w-full  min-w-full'>
             <Row>
-                <Col lg="9">
-                <Outlet></Outlet>
+                <Col lg="9" >
+                <Outlet className=''></Outlet>
                 </Col>
                 <Col lg='3'>
-                <RightSideNav></RightSideNav>
+                <RightSideNav className=""></RightSideNav>
                 </Col>
             </Row>
         </Container>

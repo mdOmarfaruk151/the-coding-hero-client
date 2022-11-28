@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
     
     FaFacebook,
@@ -9,48 +7,30 @@ import {
   } from "react-icons/fa";
 import { ListGroup } from 'react-bootstrap';
 import OffersCarousel from '../OffersCarousel/OffersCarousel';
+import CategorySideBar from "../CategorySideBar/CategorySideBar";
 
 const RightSideNav = () => {
-    //! To Store API data
-    const [categories, setCategories] = useState([]);
-
-    //! To Load API data
-    useEffect(()=>{
-         fetch('http://localhost:5000/courses-categories')
-        .then(res => res.json())
-        .then(data => setCategories(data));
-    },[])
-
+   
     return (
         <div>
             <OffersCarousel></OffersCarousel>
-            <hr className=""/>
-            <h4 className='center'>All Category: {categories.length}</h4>
-            <hr />
-            <div>
-                {
-                    categories.map(category => <p key={category.id}>
-                       <Link className="text-decoration-none btn btn-outline-primary"
-                        to={`/category/${category.id}`}>
-                            {category.name}</Link>
-                    </p>)
-                }
+            <div className="d-none d-xl-block d-xxl-none">
+            <CategorySideBar></CategorySideBar>
             </div>
-            <hr />
-      <div className="mt-4">
+      <div className="mt-4 ">
         <h5>Find Us On</h5>
         <ListGroup>
-          <ListGroup.Item className="mb-2">
-            <FaFacebook /> Facebook
+          <ListGroup.Item className="mb-2 d-flex justify-center hover:bg-blue-500 hover:text-white ">
+            <FaFacebook className="mr-2 mt-1"/> Facebook
           </ListGroup.Item>
-          <ListGroup.Item className="mb-2">
-            <FaWhatsapp /> WhatsApp
+          <ListGroup.Item className="mb-2 d-flex justify-center hover:text-white hover:bg-green-500 ">
+            <FaWhatsapp className="mr-2 mt-1"/> WhatsApp
           </ListGroup.Item>
-          <ListGroup.Item className="mb-2">
-            <FaTwitter /> Twitter
+          <ListGroup.Item className="mb-2 d-flex justify-center hover:text-white hover:bg-sky-500">
+            <FaTwitter className="mr-2 mt-1"/> Twitter
           </ListGroup.Item>
-          <ListGroup.Item className="mb-2">
-            <FaTwitch /> Twitch
+          <ListGroup.Item className="mb-2 d-flex justify-center hover:text-white hover:bg-purple-600 ">
+            <FaTwitch className="mr-2 mt-1"/> Twitch
           </ListGroup.Item>
         </ListGroup>
       </div>
