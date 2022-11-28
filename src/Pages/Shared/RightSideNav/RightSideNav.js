@@ -19,8 +19,9 @@ const RightSideNav = () => {
       <div className="mt-4 ">
         <h5>Find Us On</h5>
         <ListGroup>
-          <ListGroup.Item className="mb-2 d-flex justify-center hover:bg-blue-500 hover:text-white ">
-            <FaFacebook className="mr-2 mt-1"/> Facebook
+          <ListGroup.Item className="mb-2 d-flex justify-center hover:bg-blue-500 hover:text-white " to={'https://www.facebook.com/Mohammad.Omar.Faruk007'}>
+            <FaFacebook className="mr-2 mt-1"/> 
+            Facebook
           </ListGroup.Item>
           <ListGroup.Item className="mb-2 d-flex justify-center hover:text-white hover:bg-green-500 ">
             <FaWhatsapp className="mr-2 mt-1"/> WhatsApp

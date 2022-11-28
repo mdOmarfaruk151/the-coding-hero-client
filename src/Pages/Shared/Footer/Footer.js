@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ScrollToTop from 'react-scroll-to-top';
 import logo from '../../../images/logo.png';
+import { ReactComponent as TopSVG } from "../../../images/arrow-up.svg";
 
 const Footer = () => {
     return (
         <div>
+          <ScrollToTop smooth top="500"   
+          component={<TopSVG  className='w-12 -mt-4 -ml-1 '/>}
+          className="dark:bg-black "
+          />
             <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
     <img className='w-20' src={logo} alt="" />
