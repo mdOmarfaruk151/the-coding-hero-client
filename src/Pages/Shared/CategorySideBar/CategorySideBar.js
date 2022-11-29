@@ -25,14 +25,14 @@ const CategorySideBar = () => {
  //!...............................................
 
     return (
-        <div>
+        <div className='ml-2'>
             <hr className="mt-3 dark:bg-white"/>
             <h4 className=''>All Category: {categories.length}</h4>
             <hr />
             <div className='p-2'>
                 {
                     categories.map(category => <p key={category.id}>
-                       <NavLink className="text-decoration-none text-white btn btn-outline-dark btn-secondary "
+                       <NavLink className=" text-decoration-none text-white btn btn-outline-dark btn-secondary "
                         to={`/category/${category.id}`}
                         style={navNavLinkStyles}
                         >

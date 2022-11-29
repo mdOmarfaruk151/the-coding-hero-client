@@ -8,7 +8,7 @@ import Offers3 from '../../../../src/assets/Offers/christmas-offer.jpg';
 const OffersCarousel = () => {
     return (
         <div>
-            <div>
+            <div className='mt-2 ml-2'>
       <Carousel>
         <Carousel.Item>
           <img
