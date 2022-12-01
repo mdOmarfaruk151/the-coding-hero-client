@@ -11,7 +11,7 @@ const TopSlideCover = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-100 "
-          style={{height: '400px'}}
+          style={{height: '500px'}}
           src={Learning}
           alt="First slide"
         />
@@ -25,7 +25,7 @@ const TopSlideCover = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-100 "
-          style={{height: '400px'}}
+          style={{height: '500px'}}
           src={people}
           alt="Second slide"
         />
@@ -40,7 +40,7 @@ const TopSlideCover = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-100 "
-          style={{height: '400px'}}
+          style={{height: '500px'}}
           src={webDeveloper}
           alt="Third slide"
         />
