@@ -27,7 +27,7 @@ const CategorySideBar = () => {
     return (
         <div className='ml-2'>
             <hr className="mt-3 dark:bg-white"/>
-            <h4 className=''>All Category: {categories.length}</h4>
+            <h4 className='text-center'>All Courses Category : {categories.length}</h4>
             <hr />
             <div className='p-2'>
                 {

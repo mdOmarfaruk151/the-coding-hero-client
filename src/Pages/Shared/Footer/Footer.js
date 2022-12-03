@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
           <ScrollToTop smooth top="500"   
           component={<TopSVG  className='w-12 -mt-4 -ml-1 '/>}
-          className="dark:bg-black "
+          className="dark:bg-black animate-bounce"
           />
             <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
