@@ -1,10 +1,12 @@
 import React from 'react';
 import { FaEye, FaFilter, FaGlobe, FaInfoCircle, FaStar, FaTag, FaUserGraduate } from 'react-icons/fa';
 
-const CourseTopBox = ({singleCourse}) => {
+
+const CourseTopBox = ({singleCourse, ref}) => {
     const {title, sub_details, rating, students,language, author,total_view, topic, badge} =singleCourse;
     return (
-        <div className='bg-black text-white mt-2 rounded-md p-4 border-2 dark:border-cyan-600 border-gray-500'>
+      <>
+        <div className='bg-black text-white mt-2 rounded-md p-4 border-2 dark:border-cyan-600 border-gray-500' >
         <h3>{title} <span className="badge badge-warning text-black animate-bounce p-0 badge-lg "><>{badge}</></span></h3>
         
         <p>{sub_details}</p>
@@ -44,12 +46,18 @@ const CourseTopBox = ({singleCourse}) => {
         <div className='d-flex mt-3'>
              <img className='w-8 h-8 rounded-full me-2 ' src={author.img} alt="" />
              <p className='mt-1'>{author.name}</p>
+
+             
          </div>
          <div className='d-flex items-center badge badge-info badge-lg'>
              <FaFilter className='me-2 '></FaFilter>
              <span className='text-black'>{topic}</span>
          </div>
        </div>
+       <div>
+           
+             </div>
+      </>
     );
 };
 

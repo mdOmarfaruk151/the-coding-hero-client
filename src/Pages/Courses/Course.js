@@ -6,17 +6,38 @@ import CourseContent from './CourseContent';
 import CourseLearnBox from './CourseLearnBox';
 import CoursesRightSideCard from './CoursesRightSideCard';
 import CourseTopBox from './CourseTopBox';
+import ReactToPdf from 'react-to-pdf';
+import { FaFilePdf } from 'react-icons/fa';
+
+const ref = React.createRef();
+const options = {
+    orientation: 'Portrait',
+    unit: 'in',
+    format: [28,9]
+};
 
 const Course = () => {
     const singleCourse = useLoaderData();
     console.log(singleCourse)
-    const {title, image_url, sub_details, badge, rating, students, total_view, price, language, author, learn, course_content,course_content_text, details,  course_includes, requirements} =singleCourse;
-    
-
+    const { details, title} =singleCourse;
+  
     return (
-        <div className='container mt-2 mb-5 '>
-            
-            <CourseTopBox singleCourse={singleCourse}/>
+       <>
+       <div className='container -mb-12 mt-2 text-end'>
+            <ReactToPdf targetRef={ref} filename={`${title}.pdf`}  options={options} x={.5} y={.5} scale={0.8}>
+        {({toPdf}) => (
+            <button onClick={toPdf} >
+                <div className='d-flex '>
+                <FaFilePdf className='me-1 text-danger'/>
+                <p className='-mt-1 mr-2 text-white '>Download PDF</p>
+                </div>
+                </button>
+        )}
+    </ReactToPdf>
+            </div>
+        <div className='container mt-2 mb-5 ' ref={ref} >
+         
+            <CourseTopBox singleCourse={singleCourse} />
             <Row className=''>
                 {/* details box */}
             <Col lg='8'>
@@ -69,7 +90,9 @@ const Course = () => {
             </Row>
             
         </div>
+       </>
     );
 };
 
 export default Course;
+

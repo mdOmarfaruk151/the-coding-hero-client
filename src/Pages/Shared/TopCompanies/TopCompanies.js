@@ -14,7 +14,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto "
-          style={{height: '103.5px'}}
+          style={{height: '104px'}}
           src={box}
           alt="First slide"
         />
@@ -26,6 +26,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '104px'}}
           src={eventbrite}
           alt="Second slide"
         />
@@ -37,6 +38,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '104px'}}
           src={nasdaq}
           alt="Third slide"
         />
@@ -47,6 +49,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '104px'}}
           src={netapp}
           alt="Third slide"
         />
@@ -57,6 +60,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '104px'}}
           src={tcs}
           alt="Third slide"
         />
@@ -67,7 +71,7 @@ const TopCompanies = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
-          style={{height: '103.5px'}}
+          style={{height: '104px'}}
           src={volkswagen}
           alt="Third slide"
         />

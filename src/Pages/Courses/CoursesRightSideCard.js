@@ -11,12 +11,15 @@ const CoursesRightSideCard = ({singleCourse}) => {
 <Card.Img variant="top" src={image_url} className="w-20"/>
 <Card.Body className='dark:bg-black border-2 dark:border-cyan-600 border-gray-500 rounded-md rounded-t-none bg-gray-100'>
 <Card.Title> <h2>${price}</h2> </Card.Title>
-<Button variant="primary">ADD TO CART</Button>
-<Button variant="primary">BUY NOW</Button>
-<Card.Text className='mt-2'>
-   
-    <h5 className=''>This Course Includes:</h5>
+<div className=''>
+<Button variant="primary" className='mb-2 me-2'>ADD TO CART</Button>
+<Button variant="primary" className='mb-2 '>GET PREMIUM ACCESS</Button>
+</div>
+<Card.Text className='mt-0'>
+   <hr />
+    <h5 className='p-1'>This Course Includes:</h5>
     <hr />
+        <div className='mt-3'>
         <div className='d-flex '>
             <FaVideo className='me-2 items-center'/>
             <p className='-mt-1'>{course_includes?.a}</p>
@@ -41,6 +44,7 @@ const CoursesRightSideCard = ({singleCourse}) => {
             <FaAward className='me-2 items-center'/>
          <p className='-mt-1'>{course_includes?.f}</p>
          </div>
+        </div>
 </Card.Text> 
 </Card.Body>
 </Card>

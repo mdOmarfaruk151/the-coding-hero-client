@@ -2,7 +2,6 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CoursesSummaryCard from '.././Shared/CoursesSummaryCard/CoursesSummaryCard';
 
-
 const CoursesPage = () => {
     const allCourses = useLoaderData();
 
