@@ -13,6 +13,7 @@ const OffersCarousel = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
+            style={{height: '140px'}}
             src={Offers1}
             alt="First slide"
           />
@@ -21,6 +22,7 @@ const OffersCarousel = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
+            style={{height: '140px'}}
             src={Offers2}
             alt="Second slide"
           />        
@@ -28,6 +30,7 @@ const OffersCarousel = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
+            style={{height: '140px'}}
             src={Offers3}
             alt="Third slide"
           />        
