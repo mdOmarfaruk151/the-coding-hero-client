@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUser } from "react-icons/fa";
 import { HiOutlineBell } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import logo from "../../../images/logo.png";
 import CategorySideBar from "../CategorySideBar/CategorySideBar";
@@ -158,6 +158,7 @@ const Header = () => {
             <div className="dropdown dropdown-end mt-2">
               <label tabIndex={0} className="btn btn-ghost btn-circle hover:animate-bounce">
                 <div className=" indicator">
+                  <Link to={'/add-to-cart'}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-7 w-7 text-white -mr-5 "
@@ -172,6 +173,7 @@ const Header = () => {
                       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
+                  </Link>
                   <span className="indicator-item badge bg-red-700  ">0</span>
                 </div>
               </label>
@@ -180,7 +182,9 @@ const Header = () => {
             <div className="dropdown dropdown-end mt-2">
               <label tabIndex={0} className="btn btn-ghost btn-circle hover:animate-bounce">
                 <div className=" indicator">
-             <svg className="-mr-5 " xmlns="http://www.w3.org/2000/svg" width="27" height="" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                  <Link to={'/notification'}>
+                  <svg className="-mr-5 " xmlns="http://www.w3.org/2000/svg" width="27" height="" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                  </Link>
                   <span className="indicator-item badge bg-red-700  ">0</span>
                 </div>
               </label>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaAward, FaCode, FaFileDownload, FaInfinity, FaMobileAlt, FaVideo } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const CoursesRightSideCard = ({singleCourse}) => {
     const { image_url, price, course_includes} =singleCourse;
@@ -12,8 +13,8 @@ const CoursesRightSideCard = ({singleCourse}) => {
 <Card.Body className='dark:bg-black border-2 dark:border-cyan-600 border-gray-500 rounded-md rounded-t-none bg-gray-100'>
 <Card.Title> <h2>${price}</h2> </Card.Title>
 <div className=''>
-<Button variant="primary" className='mb-2 me-2'>ADD TO CART</Button>
-<Button variant="primary" className='mb-2 '>GET PREMIUM ACCESS</Button>
+<Button variant="primary" className='mb-2 me-2'><Link to={'/add-to-cart'} className="text-white no-underline">ADD TO CART</Link></Button>
+<Button variant="primary" className='mb-2 ' > <Link to={'/get-premium-access'} className="text-white no-underline">GET PREMIUM ACCESS</Link></Button>
 </div>
 <Card.Text className='mt-0'>
    <hr />

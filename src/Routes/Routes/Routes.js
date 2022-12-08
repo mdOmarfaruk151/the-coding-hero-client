@@ -19,6 +19,9 @@ import TermsAndConditions from "../../Pages/Shared/LEGAL/TermsAndConditions";
 import Support from "../../Pages/Support/Support";
 import CoursesPage from "../../Pages/Courses/CoursesPage";
 import Course from "../../Pages/Courses/Course";
+import GetPremiumAccess from "../../Pages/Courses/GetPremiumAccess";
+import AddToCart from "../../Pages/Courses/AddToCart";
+import Notification from "../../Pages/Shared/Header/Notification";
 
 export const routes = createBrowserRouter([
     {
@@ -107,6 +110,18 @@ export const routes = createBrowserRouter([
             path: '/refund-policy',
             element: <RefundPolicy></RefundPolicy>
           },
+          {
+            path: '/get-premium-access',
+            element:<GetPremiumAccess></GetPremiumAccess>
+          },
+          {
+            path:'/add-to-cart',
+            element:<AddToCart></AddToCart>
+          },
+          {
+            path:"/notification",
+            element:<Notification></Notification>
+          }
         ]
     },
     {

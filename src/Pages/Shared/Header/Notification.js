@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MyClasses = () => {
+const Notification = () => {
     return (
         <div className='container mt-2 mb-5 text-center'>
-            <h4>Added Soon...</h4>
+            <h3>No Notification Found</h3>
         </div>
     );
 };
 
-export default MyClasses;
+export default Notification;

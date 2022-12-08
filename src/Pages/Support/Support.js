@@ -3,11 +3,9 @@ import React from 'react';
 
 const Support = () => {
     return (
-        <div>
-           <h3>support</h3>
-
-</div>
-       
+        <div className='container mt-2 mb-5 text-center'>
+        <h4>Added Soon...</h4>
+        </div>
     );
 };
 

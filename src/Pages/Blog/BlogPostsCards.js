@@ -37,10 +37,16 @@ const BlogPostsCards = ({blogs}) => {
       <Card.Img variant='top' className='' src={post_img}/>
       <Card.Body className='bg-gray-300 dark:bg-black 
 '>
-      <span className="badge badge-lg badge-dark dark:badge-info hover:animate-bounce">{topic}</span>
         <Card.Title>
           
-          <h4 className='text-justify'>{question}</h4><span className="badge badge-lg text-end badge-warning hover:animate-bounce text-black">NEW</span></Card.Title>
+          <h4 className='text-start'>{question}</h4>
+          <div className='d-flex justify-between'>
+          <span className="badge badge-lg badge-dark dark:badge-info hover:animate-bounce ">{topic}</span>
+
+          <span className="badge badge-lg text-end badge-warning hover:animate-bounce text-black ">NEW</span>
+          </div>
+          
+          </Card.Title>
         
         <Card.Text className='text-justify font-sans text-lg'>
           {

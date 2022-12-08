@@ -18,7 +18,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto "
-          style={{height: '168.5px'}}
+          style={{height: '168px'}}
           src={box}
           alt="First slide"
         />
@@ -30,6 +30,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '168px'}}
           src={eventbrite}
           alt="Second slide"
         />
@@ -41,6 +42,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '168px'}}
           src={nasdaq}
           alt="Third slide"
         />
@@ -51,6 +53,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '168px'}}
           src={netapp}
           alt="Third slide"
         />
@@ -61,6 +64,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
+          style={{height: '168px'}}
           src={tcs}
           alt="Third slide"
         />
@@ -71,7 +75,7 @@ const Teams = () => {
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-50 mx-auto"
-          style={{height: '168.5px'}}
+          style={{height: '168px'}}
           src={volkswagen}
           alt="Third slide"
         />

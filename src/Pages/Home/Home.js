@@ -7,12 +7,12 @@ import TopPopUp from './TopPopUp';
 import TopSlideCover from './TopSlideCover';
 import SpecialOffers from './SpecialOffers';
 
-
 const Home = () => {
     return (
 <div className=' dark:bg-black container'>
 <section>
-<TopPopUp/>    
+<TopPopUp/> 
+  
 </section> 
 <br />
 <section>
