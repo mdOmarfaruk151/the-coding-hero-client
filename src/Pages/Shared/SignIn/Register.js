@@ -6,8 +6,10 @@ import logo from '../../../images/logo.png';
 
 const Register = () => {
   const [error, setError] = useState('');
+  const [accepted, setAccepted] = useState(false);
+
   //! get function from AuthProvider
-  const {createUser} = useContext(AuthContext);
+  const {createUser, updateUserProfile} = useContext(AuthContext);
 
   const handleSubmit = event =>{
     event.preventDefault();
@@ -16,7 +18,7 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name,photoURL,email,password);
+    // console.log(name,photoURL,email,password);
 
     createUser(email, password)
     .then(result =>{
@@ -24,11 +26,27 @@ const Register = () => {
       console.log(user);
       setError('');
       form.reset();
+      handleUpdateUserProfile(name, photoURL);
     })
     .catch(e=>{
       console.error(e);
       setError(e.message);
     });
+  }
+  //! for update user profile
+  const handleUpdateUserProfile = (name, photoURL) =>{
+    const profile = {
+      displayName: name,
+      photoURL: photoURL
+    }
+    updateUserProfile(profile)
+    .then(() =>{})
+    .catch(error =>console.error(error));
+  }
+
+  //! for checkbox
+  const handleAccepted = event =>{
+    setAccepted(event.target.checked)
   }
     return (
         <>
@@ -117,13 +135,15 @@ const Register = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <input
-                    id="remember-me"
+                    id="Accept-Terms-and-conditions"
                     name="remember-me"
                     type="checkbox"
+                    onClick={handleAccepted}
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                   />
-                  <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900 dark:text-white">
-                    Remember me
+                  <label htmlFor="Accept-Terms-and-conditions" className="ml-2 block text-sm text-gray-900 dark:text-white">
+                    <>Accept <Link to={'/terms-and-conditions'}>Terms and Conditions</Link></>
+                  
                   </label>
                 </div>
   
@@ -134,6 +154,7 @@ const Register = () => {
                 <button
                   type="submit"
                   className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  disabled={!accepted}
                 >
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                     <HiLockClosed className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />

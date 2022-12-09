@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TermsAndConditions = () => {
     return (
         <div className='container mt-4'>
             
-            <h3 className='mb-4 font-bold'>The Coding Hero Terms of Use</h3>
+            <div className='mb-3 font-bold justify-between d-flex'>
+                <h3>The Coding Hero Terms of Use</h3>
+                <p>Go Back To: <Link to={'/register'}>Register</Link></p>
+            </div>
             <p className=' text-lg text-justify font-semibold '>
 
 Welcome to 'The Coding Hero'. We assume that you are using or intending to use the website in accordance with all the terms and conditions of this website. “We”, “Us” as used in this website basically means “The Coding Hero” authorities. If you have problem understanding any terms and conditions then you can contact us via email or facebook page. The decision of “The Coding Hero” authority regarding terms and conditions is final and the authority reserves the right to change it at any time.
