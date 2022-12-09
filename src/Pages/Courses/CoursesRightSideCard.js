@@ -4,7 +4,7 @@ import { FaAward, FaCode, FaFileDownload, FaInfinity, FaMobileAlt, FaVideo } fro
 import { Link } from 'react-router-dom';
 
 const CoursesRightSideCard = ({singleCourse}) => {
-    const { image_url, price, course_includes} =singleCourse;
+    const { image_url, price, course_includes,_id} =singleCourse;
 
     return (
         <div >
@@ -14,7 +14,7 @@ const CoursesRightSideCard = ({singleCourse}) => {
 <Card.Title> <h2>${price}</h2> </Card.Title>
 <div className=''>
 <Button variant="primary" className='mb-2 me-2'><Link to={'/add-to-cart'} className="text-white no-underline">ADD TO CART</Link></Button>
-<Button variant="primary" className='mb-2 ' > <Link to={'/get-premium-access'} className="text-white no-underline">GET PREMIUM ACCESS</Link></Button>
+<Button variant="primary" className='mb-2 ' > <Link to={`/get-premium-access/${_id}`} className="text-white no-underline">GET PREMIUM ACCESS</Link></Button>
 </div>
 <Card.Text className='mt-0'>
    <hr />

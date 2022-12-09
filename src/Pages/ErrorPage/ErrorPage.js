@@ -15,7 +15,7 @@ const ErrorPage = () => {
 </div>
          <div className='text-center no-underline'>
          <Link to={"./"} className="no-underline">
-              <p className="text-center hover:text-4xl text-black font-bold text-3xl  justify-center d-flex  ">
+              <p className="text-center hover:text-2xl text-black font-bold text-3xl  justify-center d-flex " style={{height:'20px'}}>
               <HiOutlineHome className='mr-1 mt-1'/>
                 Back To Home
               </p>

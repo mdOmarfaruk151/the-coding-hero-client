@@ -3,7 +3,6 @@ import Main from "../../layout/Main";
 import About from "../../Pages/About/About";
 import BlogPage from "../../Pages/Blog/BlogPage";
 import Blog from "../../Pages/Blog/Blog";
-import Category from "../../Pages/Category/Category/Category";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
@@ -21,7 +20,10 @@ import CoursesPage from "../../Pages/Courses/CoursesPage";
 import Course from "../../Pages/Courses/Course";
 import GetPremiumAccess from "../../Pages/Courses/GetPremiumAccess";
 import AddToCart from "../../Pages/Courses/AddToCart";
-import Notification from "../../Pages/Shared/Header/Notification";
+import LogIn from "../../Pages/Shared/LogIn/LogIn";
+import Profile from "../../Pages/Shared/Profile/Profile";
+import Notification from "../../Pages/Notification/Notification";
+import Register from "../../Pages/Shared/SignIn/Register";
 
 export const routes = createBrowserRouter([
     {
@@ -111,8 +113,9 @@ export const routes = createBrowserRouter([
             element: <RefundPolicy></RefundPolicy>
           },
           {
-            path: '/get-premium-access',
-            element:<GetPremiumAccess></GetPremiumAccess>
+            path: '/get-premium-access/:id',
+            element:<GetPremiumAccess></GetPremiumAccess>,
+            loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
           },
           {
             path:'/add-to-cart',
@@ -121,6 +124,18 @@ export const routes = createBrowserRouter([
           {
             path:"/notification",
             element:<Notification></Notification>
+          },
+          {
+            path:"/register",
+            element:<Register></Register>
+          },
+          {
+            path:"/log-in",
+            element:<LogIn></LogIn>
+          },
+          {
+            path:"/profile",
+            element:<Profile></Profile>
           }
         ]
     },
