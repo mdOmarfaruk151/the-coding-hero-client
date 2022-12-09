@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
@@ -10,8 +10,10 @@ const LogIn = () => {
 
     //! for google login
     const googleProvider = new GoogleAuthProvider()
-
-    const {providerLogin, signIn} = useContext(AuthContext);
+    //! for github login
+    const githubProvider = new GithubAuthProvider()
+    //! get function from AuthProvider
+    const {providerLogin,githubProviderLogin, signIn} = useContext(AuthContext);
 
     const navigate = useNavigate();
  
@@ -21,8 +23,21 @@ const LogIn = () => {
        .then(result =>{
         const user = result.user;
         console.log(user);
+        navigate('/')
        })
        .catch(error => console.error(error))
+    }
+    //! for login with github
+    const handleGithubSignIn =()=>{
+        githubProviderLogin(githubProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            navigate('/')
+        })
+        .catch(error =>{
+            console.error('error',error);
+        })
     }
     //! for login with email and password
     const handleSubmit = event =>{
@@ -134,12 +149,12 @@ const LogIn = () => {
     </button> 
 
   <div className="divider lg:divider-horizontal">OR</div> 
-  <div className="grid flex-grow h-5 card bg-base-500 rounded-box place-items-center dark:bg-black border-2 dark:border-cyan-600 border-gray-500 hover:bg-black hover:text-white dark:hover:bg-gray-700">
+  <button onClick={handleGithubSignIn} className="grid flex-grow h-5 card bg-base-500 rounded-box place-items-center dark:bg-black border-2 dark:border-cyan-600 border-gray-500 hover:bg-black hover:text-white dark:hover:bg-gray-700">
     <div className='d-flex p-3 ' >
     <FaGithub className='mt-1 me-1 '/>
     <h5>Gitbub</h5>
     </div>
-    </div>
+    </button>
 </div>
             </Form>
           </div>
