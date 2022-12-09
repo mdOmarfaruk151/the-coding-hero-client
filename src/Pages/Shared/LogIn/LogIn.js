@@ -1,4 +1,4 @@
-import { GithubAuthProvider, GoogleAuthProvider} from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -36,7 +36,7 @@ const LogIn = () => {
     }
     //! for login with github
     const handleGithubSignIn =()=>{
-        githubProviderLogin(githubProvider)
+      githubProviderLogin(githubProvider)
         .then(result =>{
             const user = result.user;
             console.log(user);
@@ -44,6 +44,9 @@ const LogIn = () => {
         })
         .catch(error =>{
             console.error('error',error);
+        })
+        .finally(()=>{
+          setLoading(false);
         })
     }
     //! for login with email and password
