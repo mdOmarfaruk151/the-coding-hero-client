@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { HiLockClosed } from 'react-icons/hi';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../../../images/logo.png';
 
 const Register = () => {
-
+  const [error, setError] = useState('');
+  //! get function from AuthProvider
   const {createUser} = useContext(AuthContext);
 
   const handleSubmit = event =>{
@@ -21,9 +22,13 @@ const Register = () => {
     .then(result =>{
       const user =result.user;
       console.log(user);
+      setError('');
       form.reset();
     })
-    .catch(e=>console.error(e));
+    .catch(e=>{
+      console.error(e);
+      setError(e.message);
+    });
   }
     return (
         <>
@@ -106,7 +111,9 @@ const Register = () => {
                   />
                 </div>
               </div>
-  
+               <div className='text-danger'>
+               <small>{error}</small>
+               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <input

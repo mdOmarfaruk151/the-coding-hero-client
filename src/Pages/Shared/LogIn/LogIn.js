@@ -1,8 +1,8 @@
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
-import { Form, Link, useNavigate } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../../../images/logo.png';
 
@@ -12,10 +12,16 @@ const LogIn = () => {
     const googleProvider = new GoogleAuthProvider()
     //! for github login
     const githubProvider = new GithubAuthProvider()
+    //! for show error msg
+     const [error, setError] = useState('');
     //! get function from AuthProvider
-    const {providerLogin,githubProviderLogin, signIn} = useContext(AuthContext);
-
+    const {providerLogin, githubProviderLogin, signIn} = useContext(AuthContext);
+    //! for when login go to the selected page
     const navigate = useNavigate();
+    //! for set deflate page when login
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
  
     //! for login with google
     const handleGoogleLogIn =() =>{
@@ -23,7 +29,7 @@ const LogIn = () => {
        .then(result =>{
         const user = result.user;
         console.log(user);
-        navigate('/')
+        navigate(from, {replace: true})
        })
        .catch(error => console.error(error))
     }
@@ -33,7 +39,7 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
-            navigate('/')
+            navigate(from, {replace: true});
         })
         .catch(error =>{
             console.error('error',error);
@@ -50,9 +56,13 @@ const LogIn = () => {
             const user = result.user;
             console.log(user);
             form.reset();
-            navigate('/')
+            setError('');
+            navigate(from, {replace: true})
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+            console.error(error)
+            setError(error.message);
+        })
     }
     
     return (
@@ -107,7 +117,9 @@ const LogIn = () => {
                   />
                 </div>
               </div>
-  
+               <div className='text-danger'>
+                <small>{error}</small>
+               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <input

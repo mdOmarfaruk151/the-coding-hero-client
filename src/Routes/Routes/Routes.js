@@ -24,6 +24,7 @@ import LogIn from "../../Pages/Shared/LogIn/LogIn";
 import Profile from "../../Pages/Shared/Profile/Profile";
 import Notification from "../../Pages/Notification/Notification";
 import Register from "../../Pages/Shared/SignIn/Register";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
     {
@@ -51,11 +52,15 @@ export const routes = createBrowserRouter([
           },
           {
             path: '/my-classes',
-            element: <MyClasses></MyClasses>
+            element: <PrivateRoutes>
+                <MyClasses></MyClasses>
+            </PrivateRoutes>
           },
           {
             path: '/support',
-            element: <Support></Support>
+            element: <PrivateRoutes>
+                <Support></Support>
+            </PrivateRoutes>
           },
           {
             path: '/blog',
@@ -114,7 +119,9 @@ export const routes = createBrowserRouter([
           },
           {
             path: '/get-premium-access/:id',
-            element:<GetPremiumAccess></GetPremiumAccess>,
+            element:<PrivateRoutes>
+                <GetPremiumAccess></GetPremiumAccess>
+                </PrivateRoutes>,
             loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
           },
           {
