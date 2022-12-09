@@ -38,7 +38,7 @@ const CourseTopBox = ({singleCourse, ref}) => {
          </div>
          <div className='d-flex items-center '>
              <FaTag className='me-2 '></FaTag>
-             <span>{rating?.badge}</span>
+             <span>{rating.badge}</span>
          </div>
          </div>
       </div>

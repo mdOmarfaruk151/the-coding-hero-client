@@ -1,5 +1,4 @@
-
-import { ListGroup } from 'react-bootstrap';
+import React from 'react';
 import OffersCarousel from '../OffersCarousel/OffersCarousel';
 import CategorySideBar from "../CategorySideBar/CategorySideBar";
 import FindUsOn from "./FindUsOn";

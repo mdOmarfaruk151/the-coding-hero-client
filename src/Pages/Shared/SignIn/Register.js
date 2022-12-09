@@ -1,15 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
+import { useContext, useState } from 'react';
 import { HiLockClosed } from 'react-icons/hi';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../../../images/logo.png';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
   const [error, setError] = useState('');
   const [accepted, setAccepted] = useState(false);
 
   //! get function from AuthProvider
-  const {createUser, updateUserProfile} = useContext(AuthContext);
+  const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
 
   const handleSubmit = event =>{
     event.preventDefault();
@@ -27,6 +29,8 @@ const Register = () => {
       setError('');
       form.reset();
       handleUpdateUserProfile(name, photoURL);
+      handleEmailVerification();
+      toast.success('Please Verify Your Email Address.')
     })
     .catch(e=>{
       console.error(e);
@@ -43,7 +47,12 @@ const Register = () => {
     .then(() =>{})
     .catch(error =>console.error(error));
   }
-
+  //! for email verify
+  const handleEmailVerification = () =>{
+    verifyEmail()
+    .then(() =>{})
+    .catch(error => console.error(error));
+  }
   //! for checkbox
   const handleAccepted = event =>{
     setAccepted(event.target.checked)

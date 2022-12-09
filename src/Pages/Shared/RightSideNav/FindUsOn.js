@@ -11,7 +11,7 @@ const FindUsOn = () => {
         <ListGroup>
           <ListGroup.Item className="mb-2 d-flex justify-center hover:bg-blue-500 hover:text-white "  >
             <FaFacebook className="mr-2 mt-1"/> 
-            <a  href="https://www.facebook.com/Mohammad.Omar.Faruk007" target="_blank" className='no-underline text-gray-600' >Facebook</a>
+            <a  href="https://www.facebook.com/Mohammad.Omar.Faruk007" target="_blank" rel="noopener noreferrer" className='no-underline text-gray-600' >Facebook</a>
           </ListGroup.Item>
           <ListGroup.Item className="mb-2 d-flex justify-center hover:text-white hover:bg-green-500 ">
             <FaWhatsapp className="mr-2 mt-1"/> WhatsApp

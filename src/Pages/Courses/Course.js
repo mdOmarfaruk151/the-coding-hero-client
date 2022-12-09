@@ -57,34 +57,36 @@ const Course = () => {
                <div className='bg-gray-100 dark:bg-black mt-2 rounded-md p-4 border-2 dark:border-cyan-600 border-gray-500 '>
                 <h3>Requirements</h3>
                 <hr />
-                <p>{details?.requirements}</p>
+                <div>
+                <p>{details.requirements}</p>
+                </div>
                </div>
 
                <div className='mt-2 -mb-2'>
                <Alert  variant={'success'}>
-                {details?.msg}
+                {details.msg}
               </Alert>
                </div>
 
                <div className='bg-gray-100 dark:bg-black mt-1 rounded-md p-4 border-2 dark:border-cyan-600 border-gray-500 text-justify '>
                 <h3>Description</h3>
                 <hr />
-                <p>{details?.description?.a}</p>
-                <p>{details?.description?.b}</p>
-                <p>{details?.description?.c}</p>
+                <p>{details.description.a}</p>
+                <p>{details.description.b}</p>
+                <p>{details.description.c}</p>
                </div>
 
                <div className='bg-gray-100 dark:bg-black mt-2 rounded-md p-4 border-2 dark:border-cyan-600 border-gray-500 text-justify'>
                 <h3>Who This Course Is For:</h3>
                 <hr />
-                <p>{details?.course_for?.a}</p>
-                <p>{details?.course_for?.b}</p>
-                <p>{details?.course_for?.c}</p>
-                <p>{details?.course_for?.d}</p>
-                <p>{details?.course_for?.e}</p>
-                <p>{details?.course_for?.f}</p>
-                <p>{details?.course_for?.g}</p>
-                <p>{details?.course_for?.h}</p>
+                <p>{details.course_for.a}</p>
+                <p>{details.course_for.b}</p>
+                <p>{details.course_for.c}</p>
+                <p>{details.course_for.d}</p>
+                <p>{details.course_for.e}</p>
+                <p>{details.course_for.f}</p>
+                <p>{details.course_for.g}</p>
+                <p>{details.course_for.h}</p>
                </div>
                 </Col>
             </Row>

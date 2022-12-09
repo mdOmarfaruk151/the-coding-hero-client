@@ -23,27 +23,27 @@ const CoursesRightSideCard = ({singleCourse}) => {
         <div className='mt-3'>
         <div className='d-flex '>
             <FaVideo className='me-2 items-center'/>
-            <p className='-mt-1'>{course_includes?.a}</p>
+            <p className='-mt-1'>{course_includes.a}</p>
          </div>
          <div className='d-flex'>
             <FaFileDownload className='me-2 items-center'/>
-         <p className='-mt-1'>{course_includes?.b}</p>
+         <p className='-mt-1'>{course_includes.b}</p>
          </div>
          <div className='d-flex '>
             <FaCode className='me-2 items-center'/>
-         <p className='-mt-1'>{course_includes?.c}</p>
+         <p className='-mt-1'>{course_includes.c}</p>
          </div>
          <div className='d-flex'>
             <FaInfinity className='me-2 items-center'/>
-         <p className='-mt-1'>{course_includes?.d}</p>
+         <p className='-mt-1'>{course_includes.d}</p>
          </div>
          <div className='d-flex'>
             <FaMobileAlt className='me-2 items-center'/>
-         <p className='-mt-1'>{course_includes?.e}</p>
+         <p className='-mt-1'>{course_includes.e}</p>
          </div>
          <div className='d-flex'>
             <FaAward className='me-2 items-center'/>
-         <p className='-mt-1'>{course_includes?.f}</p>
+         <p className='-mt-1'>{course_includes.f}</p>
          </div>
         </div>
 </Card.Text> 

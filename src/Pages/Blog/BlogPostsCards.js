@@ -51,9 +51,9 @@ const BlogPostsCards = ({blogs}) => {
         <Card.Text className='text-justify font-sans text-lg'>
           {
             ans.length > 250 ?
-            <p>{ans.slice(0, 250)+'...'}<Link className='no-underline text-lg' to={`/blogs/${id}`} >Read More</Link></p>
+            <>{ans.slice(0, 250)+'...'}<Link className='no-underline text-lg' to={`/blogs/${id}`} >Read More</Link></>
             :
-            <p>{ans}</p>
+            {ans}
           }
         </Card.Text>
         

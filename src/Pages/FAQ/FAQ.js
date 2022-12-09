@@ -57,7 +57,7 @@ If you want to get into tech professionally, here's another tip: start by lookin
       <Accordion.Item eventKey="2" className='mb-2 '>
         <Accordion.Header ><h5 className=''>Q3: IS IT POSSIBLE TO DO BOTH GRAPHIC DESIGN AND CODING?</h5></Accordion.Header>
         <Accordion.Body className='dark:bg-black dark:text-white'>
-    <p className="text-justify">
+    <div className="text-justify">
         <p>
         If you have an interest in coding and graphic design, then there's nothing to say you shouldn't learn skills in both areas. They often work hand-in-hand, so having knowledge and skills in both areas could be desirable for certain career paths. You could also think about pursuing something in between like UI design, which is a very in-demand career right now!
         </p>
@@ -69,7 +69,7 @@ In general, having design skills along with coding skills is helpful. But it's a
 <p className="-mt-5">
 Looking for somewhere to learn coding and design skills? Zero to Mastery is a great way to learn full coding AND design boot camp all in one place. Their courses Complete Web Developer and Complete Web & Mobile Designer both come with the ZTM Academy membership.
 </p>
-        </p> 
+        </div> 
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3" className='mb-2 '>
@@ -83,7 +83,7 @@ Looking for somewhere to learn coding and design skills? Zero to Mastery is a gr
       <Accordion.Item eventKey="4" className='mb-2 '>
         <Accordion.Header ><h5 className=''>Q4: SHOULD I LEARN SKILLS IN SEVERAL AREAS, OR FOCUS ON ONE THING IN PARTICULAR?</h5></Accordion.Header>
         <Accordion.Body className='dark:bg-black dark:text-white'>
-         <p className="text-justify">
+         <div className="text-justify">
         <p>
         Personally, I'd say choose a path and stick to it! Learning too many things at once will slow you down. Here are a few ideas of things you can choose to focus on, and a little bit about each one.
         </p>
@@ -159,13 +159,13 @@ UX is an interesting area because it can encompass a whole range of skills—all
 A big thing you should consider, though, is that UX-specific careers are hard to break into as a beginner. There aren't a lot of companies looking for junior UX designers, or junior UI designers. Nonetheless, these skills could help you as a front-end developer, web designer, product manager, and more, so it really is a great area to pursue. Even if you don't launch a career in UX specifically, having a background in it can make you a more credible candidate for other roles.
 </p>
     </p>
-         </p>
+         </div>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="5" className='mb-2 '>
         <Accordion.Header ><h5 className=''>Q5: HOW DO YOU CHOOSE BETWEEN TWO COURSES?</h5></Accordion.Header>
         <Accordion.Body className='dark:bg-black dark:text-white'>
-         <p className="text-justify">
+         <div className="text-justify">
         <p>
         It can be tough to choose between courses when they all look great! When looking at several courses, I would consider the “joblearn” approach—which course teaches the skills needed to get the jobs "or clients" you want?
         </p>
@@ -173,7 +173,7 @@ A big thing you should consider, though, is that UX-specific careers are hard to
 <p className="-mt-5">
 If you're not sure, think about what you want to do and the kind of work you want to pursue. Maybe try some free courses on the same subject to see if they pique your interest. Then, when you're sure, you'll be more equipped to decide which course offers the right modules that you need to scale up your knowledge.
 </p>
-         </p>
+         </div>
         </Accordion.Body>
       </Accordion.Item>
    

@@ -10,31 +10,31 @@ const CourseLearnBox = ({singleCourse}) => {
         <hr />
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.a}</p>
+       <p className='-mt-1'>{learn.a}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.b}</p>
+       <p className='-mt-1'>{learn.b}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.c}</p>
+       <p className='-mt-1'>{learn.c}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.d}</p>
+       <p className='-mt-1'>{learn.d}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.e}</p>
+       <p className='-mt-1'>{learn.e}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.f}</p>
+       <p className='-mt-1'>{learn.f}</p>
         </div>
         <div className='d-flex'>
        <FaCheck className='me-2'/>
-       <p className='-mt-1'>{learn?.g}</p>
+       <p className='-mt-1'>{learn.g}</p>
         </div>
        </div>
     );

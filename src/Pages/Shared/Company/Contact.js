@@ -2,7 +2,6 @@ import React from 'react';
 import { HiLocationMarker, HiOutlineMail, HiOutlinePhone, HiUserGroup } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import hang from '../../../images/hang.png';
-import GoogleMapReact from 'google-map-react';
 
 
 const Contact = () => {

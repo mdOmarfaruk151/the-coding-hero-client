@@ -1,6 +1,12 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
 const SubscribeByEmail = () => {
+
+   const handleSubscribe = ()=>{
+    toast.success('Email Subscribed.')
+   }
+
     return (
         <div className='ml-2 mb-5'>
           <hr />
@@ -13,7 +19,7 @@ const SubscribeByEmail = () => {
       <div className="relative">
         <input type="text" placeholder="username@gmail.com" className="input input-bordered input-error w-full max-w-xs text-white mt-1 " /> 
 
-        <button className="w-full hover:bg-red-700 p-2 mt-2 mb-2 bg-gray-700 hover:text-lg  rounded-md text-white text-xl">Subscribe</button>
+        <button onClick={handleSubscribe} className="w-full hover:bg-red-700 p-2 mt-2 mb-2 bg-gray-700 hover:text-lg  rounded-md text-white text-xl">Subscribe</button>
       </div>
     </div>
   </div>

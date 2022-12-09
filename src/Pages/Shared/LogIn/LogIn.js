@@ -1,5 +1,6 @@
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -15,13 +16,13 @@ const LogIn = () => {
     //! for show error msg
      const [error, setError] = useState('');
     //! get function from AuthProvider
-    const {providerLogin, githubProviderLogin, signIn} = useContext(AuthContext);
+    const {providerLogin, githubProviderLogin, setLoading, signIn} = useContext(AuthContext);
     //! for when login go to the selected page
     const navigate = useNavigate();
     //! for set deflate page when login
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/';
+    const from = location?.state?.from?.pathname || '/';
  
     //! for login with google
     const handleGoogleLogIn =() =>{
@@ -57,11 +58,19 @@ const LogIn = () => {
             console.log(user);
             form.reset();
             setError('');
-            navigate(from, {replace: true})
+            if(user.emailVerified){
+              navigate(from, {replace: true})
+            }
+            else{
+              toast.error('Your Email Is Not Verified. Please Verify Your Email Address.')
+            }
         })
         .catch(error => {
             console.error(error)
             setError(error.message);
+        })
+        .finally(()=>{
+          setLoading(false);
         })
     }
     
