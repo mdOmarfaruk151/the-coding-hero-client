@@ -26,6 +26,8 @@ import Profile from "../../Pages/Shared/Profile/Profile";
 import Notification from "../../Pages/Notification/Notification";
 import Register from "../../Pages/Shared/SignIn/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import ForgotPassword from '../../Pages/Shared/ForgotPassword/ForgotPassword';
+// import ConfirmPasswordReset from '../../Pages/Shared/ConfirmPasswordReset/ConfirmPasswordReset';
 
 export const routes = createBrowserRouter([
     {
@@ -141,6 +143,14 @@ export const routes = createBrowserRouter([
             path:"/log-in",
             element:<LogIn></LogIn>
           },
+          {
+            path:"/forgot-password",
+            element:<ForgotPassword></ForgotPassword>
+          },
+          // {
+          //   path:"/confirm-password-reset",
+          //   element:<ConfirmPasswordReset></ConfirmPasswordReset>
+          // },
           {
             path:"/profile",
             element:<PrivateRoutes>

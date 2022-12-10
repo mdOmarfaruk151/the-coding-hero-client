@@ -1,8 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
+import {confirmPasswordReset, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(
+    {forgotPassword: ()=> Promise},
+    // {resetPassword: ()=> Promise}
+);
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
@@ -43,6 +46,14 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signOut(auth);
     }
+    //! for forgot password
+    const forgotPassword = (email) =>{
+        return sendPasswordResetEmail(auth, email,{url:'http://localhost:3000/log-in'});
+    }
+    // //! for confirm reset password
+    // const resetPassword = (oobCode, newPassword) =>{
+    //     return confirmPasswordReset(auth, oobCode, newPassword)
+    // }
 
     useEffect( () =>{
      const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
@@ -67,7 +78,9 @@ const AuthProvider = ({children}) => {
         createUser, 
         signIn,
         verifyEmail,
-        setLoading, 
+        setLoading,
+        forgotPassword,
+        // resetPassword, 
         loading};
 
     return (

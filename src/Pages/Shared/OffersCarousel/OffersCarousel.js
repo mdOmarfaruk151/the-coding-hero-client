@@ -9,11 +9,11 @@ const OffersCarousel = () => {
     return (
         <div>
             <div className='mt-2 ml-2 mx-auto'>
-      <Carousel>
+      <Carousel className="ml-2 ">
         <Carousel.Item>
           <img
             className="d-block w-100"
-            style={{height: '140px'}}
+            style={{height: '190px'}}
             src={Offers1}
             alt="First slide"
           />
@@ -22,7 +22,7 @@ const OffersCarousel = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            style={{height: '140px'}}
+            style={{height: '190px'}}
             src={Offers2}
             alt="Second slide"
           />        
@@ -30,7 +30,7 @@ const OffersCarousel = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            style={{height: '140px'}}
+            style={{height: '190px'}}
             src={Offers3}
             alt="Third slide"
           />        

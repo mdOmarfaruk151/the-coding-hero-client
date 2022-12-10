@@ -33,33 +33,34 @@ const Header = () => {
     <div>
       <Navbar
         collapseOnSelect
-        className="mb-0 "
+        className="mb-0  "
         expand="lg"
         bg="dark"
         variant="light"
       >
-        <Container>
-          <Navbar.Brand>
-            <NavLink className="text-decoration-none  p-0 text-white " to="/">
-              <div className="d-flex  mr-5">
-                <div>
-                  <img
-                    style={{ height: "50px", marginRight: "10px" }}
-                    src={logo}
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 text-2xl">The Coding Hero</div>
+        {/* <Container > */}
+        <Navbar.Brand>
+          <NavLink className="text-decoration-none  p-0 text-white " to="/">
+            <div className="d-flex  mr-20 ml-16 ">
+              <div>
+                <img
+                  className="me-2 "
+                  style={{ height: "50px" }}
+                  src={logo}
+                  alt=""
+                />
               </div>
-            </NavLink>
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            className="text-black bg-white"
-          />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <NavLinkOptions />
-
+              <div className="mt-2 text-2xl">The Coding Hero</div>
+            </div>
+          </NavLink>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          className="text-black bg-white"
+        />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <NavLinkOptions />
+          <div className="d-flex">
             <DarkMoodSVG />
 
             <AddToCardSVG />
@@ -67,8 +68,8 @@ const Header = () => {
             <NotificationSVG />
 
             <Nav>
-              <div className="-mt-3">
-                <div className="dropdown dropdown-end">
+              <div className="-mt-1">
+                <div className="dropdown dropdown-end ">
                   <div>
                     <Tippy content={user?.displayName}>
                       <label tabIndex={0} className="btn  btn-circle avatar">
@@ -124,11 +125,13 @@ const Header = () => {
                 </div>
               </div>
             </Nav>
-            <div className="d-lg-none text-white">
-              <CategorySideBar></CategorySideBar>
-            </div>
-          </Navbar.Collapse>
-        </Container>
+          </div>
+
+          <div className="d-lg-none text-white">
+            <CategorySideBar></CategorySideBar>
+          </div>
+        </Navbar.Collapse>
+        {/* </Container> */}
       </Navbar>
     </div>
   );

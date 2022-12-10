@@ -29,7 +29,7 @@ const DarkMoodSVG = () => {
     return (
         <div>
                <button >
-<div className="mt-2">
+<div className="mt-3 ml-3 ">
   <label className="swap swap-rotate hover:animate-bounce" >
     {/* <!-- this hidden checkbox controls the state --> */}
     <input onClick={handleThemeSwitch} type="checkbox" />

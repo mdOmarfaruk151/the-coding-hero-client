@@ -1,10 +1,12 @@
 import React from 'react';
 import BlogsTextSlider from './BlogsTextSlider';
 import blogCover from '../../images/blog-cover.jpg';
+import { Image } from 'react-bootstrap';
+
 const BlogsPageCover = () => {
     return (
         <div className="hero  " >
-        <img className='rounded-md '  src={blogCover} alt="" />
+            <Image src={blogCover} className='rounded-md '/>
 <div className="hero-overlay bg-opacity-60"></div>
 <div className="hero-content text-center text-neutral-content">
 <div className="max-w-md">
