@@ -42,8 +42,11 @@ const Footer = () => {
     <Link to="/cookie-policy" className="link link-hover  text-white">Cookie Policy</Link>
     <Link to="/refund-policy" className="link link-hover text-white">Refund Policy</Link>
   </div>
+  
 </footer>
- 
+<div className='text-center bg-gray-500 font-bold '>
+    <small >Developed by <Link to='/developed-by' className='mt-5 mb-5 no-underline text-orange-500 '>Md. Omar Faruk</Link></small>
+  </div>
         </div>
     );
 };

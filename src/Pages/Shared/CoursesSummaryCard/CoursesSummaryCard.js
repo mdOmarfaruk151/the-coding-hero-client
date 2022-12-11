@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 const CoursesSummaryCard = ({courses}) => {
     const {_id} = courses;
     return (
-        <div className=''>
-            <Card className='dark:border-cyan-500 border-4 ' style={{hight:"30px"}}>
-      <Card.Img variant="top" className='h-40 w-full' src={courses.image_url} />
+        <div >
+            <Card className='dark:border-cyan-500 border-2 border-gray-500 ' >
+      <Card.Img variant="top" className='2xl:h-60 xl:h-40 lg:h-40 md:h-40 sm:h-40 w-full' src={courses.image_url} />
       
-      <Card.Body className='dark:bg-black bg-sky-100 rounded-b-md'>
+      <Card.Body className='dark:bg-black bg-gray-400 rounded-b-md drop-shadow-2xl'>
       <span className="badge badge-info text-black -mt-2 -mb-1">{courses.topic}</span>
       
         <Card.Title>

@@ -13,7 +13,7 @@ const ref = React.createRef();
 const options = {
     orientation: 'Portrait',
     unit: 'in',
-    format: [28,9]
+    format: [27,12]
 };
 
 const Course = () => {

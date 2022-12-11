@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import About from "../../Pages/About/About";
@@ -26,141 +26,168 @@ import Profile from "../../Pages/Shared/Profile/Profile";
 import Notification from "../../Pages/Notification/Notification";
 import Register from "../../Pages/Shared/SignIn/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
-import ForgotPassword from '../../Pages/Shared/ForgotPassword/ForgotPassword';
+import ForgotPassword from "../../Pages/Shared/ForgotPassword/ForgotPassword";
+import DevelopedBy from "../../Pages/Shared/Footer/DevelopedBy/DevelopedBy";
 // import ConfirmPasswordReset from '../../Pages/Shared/ConfirmPasswordReset/ConfirmPasswordReset';
 
 export const routes = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-          {
-            path: '/',
-            element: <Home></Home>
-          },
-          {
-            path: '/courses',
-            element: <CoursesPage></CoursesPage>,
-            loader: ()=> fetch('http://localhost:5000/courses')
-          },
-          {
-            path: '/category/:id',
-            element: <CoursesPage></CoursesPage>,
-            loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
-          },
-          {
-            path: '/course/:id',
-            element: <Course></Course> ,
-            loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
-          },
-          {
-            path: '/my-classes',
-            element: <PrivateRoutes>
-                <MyClasses></MyClasses>
-            </PrivateRoutes>
-          },
-          {
-            path: '/support',
-            element: <PrivateRoutes>
-                <Support></Support>
-            </PrivateRoutes>
-          },
-          {
-            path: '/blog',
-            element:<BlogPage></BlogPage>,
-            loader:()=> fetch('http://localhost:5000/blogs')
-          },
-          {
-            path: '/blogs/:id',
-            element:<Blog></Blog>,
-            loader:({params})=> fetch(`http://localhost:5000/blogs/${params.id}`)
-          },
-          {
-            path: '/blogs-category/:id',
-            element:<BlogPage></BlogPage>,
-            loader:({params}) => fetch(`http://localhost:5000/blogs-category/${params.id}`)
-          },
-          {
-            path: '/faq',
-            element: <FAQ></FAQ>
-          },
-          {
-            path: '/about',
-            element: <About></About>
-          },
-          {
-            path: '/contact',
-            element: <Contact></Contact>
-          },
-          {
-            path: '/jobs',
-            element: <Jobs></Jobs>
-          },
-          {
-            path: '/success',
-            element: <Success></Success>
-          },
-          {
-            path: '/terms-and-conditions',
-            element: <TermsAndConditions></TermsAndConditions>
-          },
-          {
-            path: '/privacy',
-            element: <Privacy></Privacy>
-          },
-          {
-            path: '/app-policy',
-            element: <AppPolicy></AppPolicy>
-          },
-          {
-            path: '/cookie-policy',
-            element: <CookiePolicy></CookiePolicy>
-          },
-          {
-            path: '/refund-policy',
-            element: <RefundPolicy></RefundPolicy>
-          },
-          {
-            path: '/get-premium-access/:id',
-            element:<PrivateRoutes>
-                <GetPremiumAccess></GetPremiumAccess>
-                </PrivateRoutes>,
-            loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
-          },
-          {
-            path:'/add-to-cart',
-            element:<AddToCart></AddToCart>
-          },
-          {
-            path:"/notification",
-            element:<Notification></Notification>
-          },
-          {
-            path:"/register",
-            element:<Register></Register>
-          },
-          {
-            path:"/log-in",
-            element:<LogIn></LogIn>
-          },
-          {
-            path:"/forgot-password",
-            element:<ForgotPassword></ForgotPassword>
-          },
-          // {
-          //   path:"/confirm-password-reset",
-          //   element:<ConfirmPasswordReset></ConfirmPasswordReset>
-          // },
-          {
-            path:"/profile",
-            element:<PrivateRoutes>
-              <Profile></Profile>
-            </PrivateRoutes>
-          }
-        ]
-    },
-    {
-        path: "*",
-        element: <ErrorPage></ErrorPage>
-    }
-]) 
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/courses",
+        element: <CoursesPage></CoursesPage>,
+        loader: () =>
+          fetch("https://the-coding-hero-server.vercel.app/courses"),
+      },
+      {
+        path: "/category/:id",
+        element: <CoursesPage></CoursesPage>,
+        loader: ({ params }) =>
+          fetch(
+            `https://the-coding-hero-server.vercel.app/category/${params.id}`
+          ),
+      },
+      {
+        path: "/course/:id",
+        element: <Course></Course>,
+        loader: ({ params }) =>
+          fetch(
+            `https://the-coding-hero-server.vercel.app/courses/${params.id}`
+          ),
+      },
+      {
+        path: "/my-classes",
+        element: (
+          <PrivateRoutes>
+            <MyClasses></MyClasses>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/support",
+        element: (
+          <PrivateRoutes>
+            <Support></Support>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/blog",
+        element: <BlogPage></BlogPage>,
+        loader: () => fetch("https://the-coding-hero-server.vercel.app/blogs"),
+      },
+      {
+        path: "/blogs/:id",
+        element: <Blog></Blog>,
+        loader: ({ params }) =>
+          fetch(`https://the-coding-hero-server.vercel.app/blogs/${params.id}`),
+      },
+      {
+        path: "/blogs-category/:id",
+        element: <BlogPage></BlogPage>,
+        loader: ({ params }) =>
+          fetch(
+            `https://the-coding-hero-server.vercel.app/blogs-category/${params.id}`
+          ),
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/jobs",
+        element: <Jobs></Jobs>,
+      },
+      {
+        path: "/success",
+        element: <Success></Success>,
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsAndConditions></TermsAndConditions>,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy></Privacy>,
+      },
+      {
+        path: "/app-policy",
+        element: <AppPolicy></AppPolicy>,
+      },
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicy></CookiePolicy>,
+      },
+      {
+        path: "/refund-policy",
+        element: <RefundPolicy></RefundPolicy>,
+      },
+      {
+        path: "/get-premium-access/:id",
+        element: (
+          <PrivateRoutes>
+            <GetPremiumAccess></GetPremiumAccess>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://the-coding-hero-server.vercel.app/courses/${params.id}`
+          ),
+      },
+      {
+        path: "/add-to-cart",
+        element: <AddToCart></AddToCart>,
+      },
+      {
+        path: "/notification",
+        element: <Notification></Notification>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/log-in",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword></ForgotPassword>,
+      },
+      // {
+      //   path:"/confirm-password-reset",
+      //   element:<ConfirmPasswordReset></ConfirmPasswordReset>
+      // },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoutes>
+            <Profile></Profile>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path:'/developed-by',
+        element: <DevelopedBy></DevelopedBy>
+      }
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+  },
+]);
