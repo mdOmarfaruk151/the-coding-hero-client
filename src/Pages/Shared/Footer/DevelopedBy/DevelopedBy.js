@@ -6,9 +6,11 @@ import { HiLocationMarker, HiOutlineMail, HiOutlinePhone} from 'react-icons/hi';
 const DevelopedBy = () => {
     return (
         <div className='container mt-2 mb-5 justify-center '>
+            <hr />
              <h2 className="text-center mb-3">Developed By</h2>
-           <div className='d-flex justify-center rounded-md border-2 dark:border-sky-500 border-gray-500 mb-3 font-bold p-5 '>
-           <div className='mt-3 mb-3'>
+             <hr />
+           <div className='d-flex justify-center rounded-md border-2 dark:border-sky-500 border-gray-500 mb-3 font-bold p-5 shadow-2xl'>
+           <div className='mt-3 mb-3 '>
             
            <div className='d-flex'>
                 <FaRegIdBadge></FaRegIdBadge>
@@ -52,7 +54,7 @@ const DevelopedBy = () => {
             </div>
 
             <div>
-                <img className='w-60 ml-3 ' src={'https://i.ibb.co/BqZGPhh/52702568-243722699865416-4654489155693182976-n.jpg'} alt="" />
+                <img className='w-60 ml-3 shadow-2xl rounded-3xl' src={'https://i.ibb.co/BqZGPhh/52702568-243722699865416-4654489155693182976-n.jpg'} alt="" />
             </div>
 
            </div>

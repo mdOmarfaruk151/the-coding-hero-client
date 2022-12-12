@@ -11,7 +11,7 @@ const Business = () => {
     <div>
       <h1 className="text-5xl font-bold">The Coding Hero Business</h1>
       <p className="py-6">Get unlimited access to 1,000+ of The Coding Hero's top courses for your team. Learn and improve skills across Web Development, Data Science, Mobile Development, and more.</p>
-      <Link to='/' className='text-white '>
+      <Link to='/get-the-coding-hero-business' className='text-white '>
       <button className="p-3 bg-gray-700  text-xl hover:bg-red-700   rounded-md">Get The Coding Hero Business</button>
       </Link>
       

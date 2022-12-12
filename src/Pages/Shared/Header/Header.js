@@ -44,7 +44,7 @@ const Header = () => {
             <div className="d-flex  mr-20 ml-16 ">
               <div>
                 <img
-                  className="me-2 "
+                  className="me-2 mx-auto"
                   style={{ height: "50px" }}
                   src={logo}
                   alt=""

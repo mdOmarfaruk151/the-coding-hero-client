@@ -22,7 +22,7 @@ const Education = () => {
           <div>
             <h1 className="text-5xl font-bold">Transform Your Life Through Education</h1>
             <p className="py-6">Learners around the world are launching new careers, advancing in their fields, and enriching their lives.</p>
-            <Link to='/' className='text-white '>
+            <Link to='/find-out-now' className='text-white '>
             <button className="p-3 bg-gray-700  text-xl hover:bg-red-700  rounded-md">Find Out How</button>
             </Link>
           </div>

@@ -28,6 +28,10 @@ import Register from "../../Pages/Shared/SignIn/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import ForgotPassword from "../../Pages/Shared/ForgotPassword/ForgotPassword";
 import DevelopedBy from "../../Pages/Shared/Footer/DevelopedBy/DevelopedBy";
+import StartTeachingToday from "../../Pages/Home/StartTeachingToday/StartTeachingToday";
+import FindOutNow from "../../Pages/Home/FindOutNow/FindOutNow";
+import CodingHeroBusiness from "../../Pages/Home/CodingHeroBusiness/CodingHeroBusiness";
+import GetMoreInfo from "../../Pages/Home/GetMoreInfo/GetMoreInfo";
 // import ConfirmPasswordReset from '../../Pages/Shared/ConfirmPasswordReset/ConfirmPasswordReset';
 
 export const routes = createBrowserRouter([
@@ -103,6 +107,22 @@ export const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/start-teaching-today",
+        element: <StartTeachingToday></StartTeachingToday>,
+      },
+      {
+        path: "/find-out-now",
+        element: <FindOutNow></FindOutNow>,
+      },
+      {
+        path: "/get-the-coding-hero-business",
+        element: <CodingHeroBusiness></CodingHeroBusiness>,
+      },
+      {
+        path: "/get-more-info",
+        element: <GetMoreInfo></GetMoreInfo>,
       },
       {
         path: "/contact",
