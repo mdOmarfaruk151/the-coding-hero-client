@@ -88,39 +88,46 @@ const Header = () => {
                     tabIndex={0}
                     className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gray-700 rounded-box w-30 text-white text-center "
                   >
-                    <li>
-                      <Link
-                        className="justify-between no-underline hover:bg-black hover:text-white"
-                        to={"/profile"}
-                      >
-                        Profile
-                        <span className="badge">New</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="no-underline hover:bg-black hover:text-white"
-                        to={"/register"}
-                      >
-                        Register
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="no-underline hover:bg-black hover:text-white"
-                        to={"/log-in"}
-                      >
-                        Log In
-                      </Link>
-                    </li>
-                    <li>
-                      <button
-                        className="no-underline hover:bg-black hover:text-white"
-                        onClick={handleLogOut}
-                      >
-                        Log Out
-                      </button>
-                    </li>
+                    {user?.uid ? (
+                      <>
+                        <li>
+                          <Link
+                            className="justify-between no-underline hover:bg-black hover:text-white"
+                            to={"/profile"}
+                          >
+                            Profile
+                            <span className="badge">New</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <button
+                            className="no-underline hover:bg-black hover:text-white"
+                            onClick={handleLogOut}
+                          >
+                            Log Out
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li>
+                          <Link
+                            className="no-underline hover:bg-black hover:text-white"
+                            to={"/register"}
+                          >
+                            Register
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="no-underline hover:bg-black hover:text-white"
+                            to={"/log-in"}
+                          >
+                            Log In
+                          </Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </div>
               </div>

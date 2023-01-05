@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
   //! for forgot password
   const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email, {
-      url: "https://the-coding-hero.web.app/log-in",
+      url: "https://the-coding-hero.web.app/log-in", //! set link base on host active web link
     });
   };
   // //! for confirm reset password
